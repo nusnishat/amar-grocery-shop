@@ -1,20 +1,24 @@
 import { FaBasketShopping } from "react-icons/fa6";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Header = () => {
     return (
-        <div className='grid grid-cols-1 md:grid-cols-3  bg-custom-gradient py-4 px-4 md:px-8'>
-            <div className="flex">
-                <div className="p-4 bg-custom-gradient-red text-white">
-                    <FaBasketShopping></FaBasketShopping>
+        <div className='md:flex bg-custom-gradient py-4 px-8 space-y-4'>
+            <div className="text-2xl text-white font-semibold flex items-center justify-center my-auto mx-auto">
+                <div className="p-2 me-2 rounded-md bg-custom-gradient-red text-white">
+                    <FaBasketShopping className="text-3xl"></FaBasketShopping>
                 </div>
                 <div>
-                    <p>Amar Grocery</p>
+                    <p className="mt-2 text-2xl">Amar Grocery</p>
                 </div>
             </div>
-            <div>
-
+            <div className="flex items-center justify-center my-auto mx-auto md:w-1/2 shadow-sm">
+                <input type="text" className="form-control w-full p-2" placeholder="Search Product" />
+                <button className="py-2 px-4 bg-custom-gradient-red text-white" type="button">Search</button>
             </div>
-            <div>
+            <div className="flex items-center justify-center my-auto mx-auto p-2 px-6 bg-white font-semibold rounded-full">
+                <FaShoppingCart className="me-2 text-xl mt-1 inline" ></FaShoppingCart>
+                <p className="inline">My Cart (0)</p>
 
             </div>
         </div>
