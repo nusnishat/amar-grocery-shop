@@ -2,7 +2,7 @@
 const HowToOrder = () => {
     return (
         <div>
-            <div className='py-16 bg-custom-gradient text-center text-3xl text-white font-semibold'>
+            <div className='py-16 bg-custom-gradient text-center text-4xl text-white font-semibold'>
                 <h1>How To Order?</h1>
             </div>
             <div className="flex justify-center my-12">
