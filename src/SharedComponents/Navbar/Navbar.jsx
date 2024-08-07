@@ -26,13 +26,12 @@ const Navbar = () => {
                     <li>
                     <a>Shop</a>
                     <ul className="p-2">
-                        <li><NavLink to='/all'>All</NavLink></li>
-                        <li><NavLink to='/all'>Fruits and Vegetables</NavLink></li>
-                        <li><NavLink to='/all'>Meat and Fish</NavLink></li>
-                        <li><NavLink to='/all'>Home and Kitchen</NavLink></li>
-                        <li><NavLink to='/all'>Beauty and Health Care</NavLink></li>
-                        <li><NavLink to='/all'>Snacks</NavLink></li>
-                        <li><NavLink to='/all'>Cooking</NavLink></li>  
+                        <li><a href='/products/VegetablesFruits'>Fruits and Vegetables</a></li>
+                        <li><a href='/products/MeatFish'>Meat and Fish</a></li>
+                        <li><a href='/products/HomeKitchen'>Home and Kitchen</a></li>
+                        <li><a href='/products/BeautyHealth'>Beauty and Health Care</a></li>
+                        <li><a href='/products/Snacks'>Snacks</a></li>
+                        <li><a href='/products/Cooking'>Cooking</a></li>  
                     </ul>
                     </li>
                     <li><NavLink to='/aboutUs'>AboutUs</NavLink></li>
@@ -46,13 +45,12 @@ const Navbar = () => {
                     <details>
                     <summary>All Category</summary>
                     <ul className="p-2">
-                        <li><NavLink to='/all'>All</NavLink></li>
-                        <li><NavLink to='/all'>Fruits and Vegetables</NavLink></li>
-                        <li><NavLink to='/all'>Meat and Fish</NavLink></li>
-                        <li><NavLink to='/all'>Home and Kitchen</NavLink></li>
-                        <li><NavLink to='/all'>Beauty and Health Care</NavLink></li>
-                        <li><NavLink to='/all'>Snacks</NavLink></li>
-                        <li><NavLink to='/all'>Cooking</NavLink></li>  
+                        <li><a href='/products/VegetablesFruits'>Fruits and Vegetables</a></li>
+                        <li><a href='/products/MeatFish'>Meat and Fish</a></li>
+                        <li><a href='/products/HomeKitchen'>Home and Kitchen</a></li>
+                        <li><a href='/products/BeautyHealth'>Beauty and Health Care</a></li>
+                        <li><a href='/products/Snacks'>Snacks</a></li>
+                        <li><a href='/products/Cooking'>Cooking</a></li>  
                     </ul>
                     </details>
                 </li>

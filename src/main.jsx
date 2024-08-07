@@ -12,6 +12,7 @@ import ContactUs from './pages/Home/HomeComponents/ContactUs/ContactUs.jsx';
 import AuthProviders from './Providers/AuthProviders.jsx';
 import SignUp from './pages/SignUp/SignUp.jsx';
 import Login from './pages/Login/Login.jsx';
+import Products from './pages/Products/Products.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path:"/login",
         element:<Login></Login>
+      },
+      {
+        path:"/products/:department",
+        element:<Products></Products>
       },
     ]
   },
