@@ -1,11 +1,11 @@
 
 const HowToOrder = () => {
     return (
-        <div>
+        <div className="bg-custom-light">
             <div className='py-16 bg-custom-gradient text-center text-4xl text-white font-semibold'>
                 <h1>How To Order?</h1>
             </div>
-            <div className="flex justify-center my-12">
+            <div className="flex justify-center py-20 px-12 md:px-20">
                 <div className="carousel w-2/3">
                     <div id="slide1" className="carousel-item relative w-full">
                     <img src="/src/images/order-step1.webp" className="w-full" />

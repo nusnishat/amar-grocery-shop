@@ -1,10 +1,34 @@
-import { Link} from 'react-router-dom';
-
-import { FaGoogle, FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { Link, useNavigate} from 'react-router-dom';
+import Swal from 'sweetalert2'
+import { FaGoogle, FaFacebookF } from "react-icons/fa";
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../Providers/AuthProviders';
 
 const Login = () => {
-  
-    
+    const {login} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const [error, setError] = useState([]);
+
+    const handleLogin = event =>{
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        
+        login(email, password)
+        .then(result=>{
+            console.log('click')
+            const loggedUser = result.user;
+            form.reset();
+            console.log(loggedUser);
+            Swal.fire("SweetAlert2 is working!");
+        // navigate('/home/dashboard');
+        })
+        .catch(error =>{
+            setError(error.message);
+        })
+       
+    }
 
     return (
         <div>
@@ -26,8 +50,6 @@ const Login = () => {
                         <div className='flex flex-wrap space-x-4'>
                             <button className='px-4  mt-2 py-2 bg-red-600 text-white font-semibold rounded-md'><FaGoogle className='inline me-2 text-xl font-bold' />Sign up with Google</button>
                             <button className='px-4  mt-2 py-2 text-xl bg-sky-600 text-white fot-bold rounded-md'><FaFacebookF/></button>
-                            <button className='px-4  mt-2 py-2 text-xl bg-cyan-800 text-white fot-bold rounded-md'><FaLinkedinIn/></button>
-                            <button className='px-4  mt-2 py-2 text-xl bg-black text-white fot-bold rounded-md'><FaGithub/></button>
                         </div>
                     </div>
                     </div>
@@ -41,17 +63,8 @@ const Login = () => {
                     {/* --------------form section start ---------------------*/}
                     <div className="flex items-center justify-center">
                         <div className="bg-white w-full max-w-md">
-                            <form className="space-y-6">
-                                <div>
-                                    <label  className="block text-sm font-medium text-gray-700">Phone Number</label>
-                                    <input
-                                    required
-                                    type="number"
-                                    name="phone"
-                                    placeholder='Ex- 01XXXXXXXX5'
-                                    className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                    />
-                                </div>
+                            <form onSubmit={handleLogin} className="space-y-6">
+                               
                                 <div>
                                     <label  className="block text-sm font-medium text-gray-700">Email</label>
                                     <input
@@ -69,16 +82,6 @@ const Login = () => {
                                     type="password"
                                     name='password'
                                     placeholder='Enter password'
-                                    className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="password" className="block text-sm font-medium text-gray-700">Confirm Password</label>
-                                    <input
-                                    required
-                                    type="password"
-                                    name='confirmPassword'
-                                    placeholder='Confirm password'
                                     className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                     />
                                 </div>

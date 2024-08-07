@@ -6,7 +6,7 @@ const Banner = () => {
             <div className='home-banner'>
                 <img className='w-2/3 mx-auto h-auto' src="/src/images/home-banner.webp"alt="Home Banner" />
             </div>
-            <div className='py-16 px-12 md:px-20'>
+            <div className='py-20 px-12 md:px-20'>
                 <h3 className='text-center text-3xl font-semibold mb-8'>What we provide?</h3>
                     <div className="grid gird-cols-1 md:grid-cols-3 gap-4 mx-auto">
                         <div className="px- bg-white">
