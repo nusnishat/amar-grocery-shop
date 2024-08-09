@@ -9,7 +9,7 @@ const PrivateRoute = ({children}) => {
 
     if(loading)
     {
-        return <progress className="my-24 mx-auto ms-20 md:ms-36 progress w-56"></progress>
+        return <progress className="my-24 mx-auto ms-20 md:ms-3 progress w-56"></progress>
     }
     if(user)
     {

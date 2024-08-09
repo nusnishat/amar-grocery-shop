@@ -13,7 +13,7 @@ const ContactUs = () => {
             <div className='py-16 bg-custom-gradient text-center text-4xl text-white font-semibold'>
                 <h1>Contact Us</h1>
             </div>
-            <div className=' px-12 md:px-20 py-20'>
+            <div className=' px-8 md:px-20 py-20'>
                 <div className='flex flex-wrap'>
                     {/* Contact Information Section */}
                     <div className="w-full lg:w-1/2 mb-8 lg:mb-0 p-4 ">

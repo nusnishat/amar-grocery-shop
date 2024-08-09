@@ -5,7 +5,7 @@ const HowToOrder = () => {
             <div className='py-16 bg-custom-gradient text-center text-4xl text-white font-semibold'>
                 <h1>How To Order?</h1>
             </div>
-            <div className="flex justify-center py-20 px-12 md:px-20">
+            <div className="flex justify-center py-20 px-8 md:px-20">
                 <div className="carousel w-full md:w-2/3">
                     <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://i.ibb.co/xHDMWxB/order-step1.webp" className="w-full" />

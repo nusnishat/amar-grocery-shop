@@ -18,7 +18,7 @@ const Cart = () => {
             </div>
            {
             cartProducts.length != 0?
-            <div className='md:grid grid-cols-3 gap-8 py-20 px-12 md:px-20'>
+            <div className='md:grid grid-cols-3 gap-8 py-20 px-8 md:px-20'>
             <div className='col-span-2'>
                     {
                         cartProducts.map(cartProduct=><CartProduct key={cartProduct._id} cartProduct={cartProduct}></CartProduct>)

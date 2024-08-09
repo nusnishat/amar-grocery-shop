@@ -6,7 +6,7 @@ const AboutUs = () => {
             <div className='py-16 bg-custom-gradient text-center text-4xl text-white font-semibold'>
                 <h1>About Us</h1>
             </div>
-            <div className='grid grid-cols-1 gap-4 md:gap-0 md:grid-cols-2 px-12 md:px-20 py-20'>
+            <div className='grid grid-cols-1 gap-4 md:gap-0 md:grid-cols-2 px-8 md:px-20 py-20'>
                 <div className="">
                     <img className='w-2/3' src='https://i.ibb.co/c2NqWGQ/about-us-banner.jpg' alt="" />
                 </div>

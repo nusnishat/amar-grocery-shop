@@ -75,7 +75,7 @@ const SignUp = () => {
             <div className='py-16 bg-custom-gradient text-center text-4xl text-white font-semibold'>
                 <h1>Sign Up</h1>
             </div>
-            <div className='grid grid-cols-1 gap-4 md:grid-cols-2 px-12 md:px-20 py-20'>
+            <div className='grid grid-cols-1 gap-4 md:grid-cols-2 px-8 md:px-20 py-20'>
                 {/* -----------banner start------------ */}
                 <div className='flex justify-center items-center'>
                     <img className='w-2/3' src="https://i.ibb.co/B3nSZ8P/login.jpg" alt="" />
