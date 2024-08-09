@@ -22,6 +22,7 @@ const Login = () => {
             form.reset();
             console.log(loggedUser);
             Swal.fire("Login Successfull!!");
+            navigate(location?.state ? location?.state : '/')
         // navigate('/home/dashboard');
         })
         .catch(error =>{
@@ -38,7 +39,7 @@ const Login = () => {
             <div className='grid grid-cols-1 gap-4 md:grid-cols-2 px-12 md:px-20 py-16'>
                 {/* -----------banner start------------ */}
                 <div className='flex justify-center items-center'>
-                    <img className='w-2/3' src="/src/images/login.svg" alt="" />
+                    <img className='w-2/3' src="https://i.ibb.co/B3nSZ8P/login.jpg" alt="" />
                 </div>
                 {/* -----------banner end------------ */}
                 {/* ----------sign up layout------------ */}
@@ -87,6 +88,9 @@ const Login = () => {
                                 </div>
                                 <h1 className='text-center'>Don't have an account? <Link className='text-orange ms-2 underline font-semibold text-right' to='/signUp'>Sign Up</Link></h1>
                                 <div>
+                                    {
+                                        error && <p className='my-2 text-red-600'>{error}</p>
+                                    }
                                     <button
                                     type="submit"
                                     className="w-full py-2 px-4 bg-custom-gradient-red text-white font-medium rounded-md hover:shadow-xl hover:font-bold"

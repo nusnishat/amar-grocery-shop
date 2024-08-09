@@ -10,7 +10,7 @@ const Header = () => {
         fetch(`https://amar-grocery-shop-server.onrender.com/checkOut?email=${user?.email}`)
         .then(res => res.json())
         .then(data=>setCartProducts(data))
-    }, []);
+    }, [user]);
     
     return (
         <div className='md:flex bg-custom-gradient py-4 px-8 space-y-4'>

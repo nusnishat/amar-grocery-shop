@@ -8,7 +8,7 @@ const AboutUs = () => {
             </div>
             <div className='grid grid-cols-1 gap-4 md:gap-0 md:grid-cols-2 px-12 md:px-20 py-20'>
                 <div className="">
-                    <img className='w-2/3' src='/src/images/about-us-banner.jpg' alt="" />
+                    <img className='w-2/3' src='https://i.ibb.co/c2NqWGQ/about-us-banner.jpg' alt="" />
                 </div>
                 <div className="">
                     <h3 className='mb-8 text-3xl font-semibold text-custom-red'>Save more with GO! We give you the lowest prices on all your grocery needs.</h3>

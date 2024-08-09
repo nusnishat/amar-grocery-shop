@@ -9,7 +9,7 @@ const Cart = () => {
         fetch(`https://amar-grocery-shop-server.onrender.com/checkOut?email=${user?.email}`)
         .then(res => res.json())
         .then(data=>setCartProducts(data))
-    }, []);
+    }, [user]);
 
     return (
         <div className='bg-custom-light'>

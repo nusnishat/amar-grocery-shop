@@ -16,7 +16,7 @@ const ContactUs = () => {
             <div className=' px-12 md:px-20 py-20'>
                 <div className='flex flex-wrap'>
                     {/* Contact Information Section */}
-                    <div className="w-full lg:w-1/2 mb-8 lg:mb-0 p-4">
+                    <div className="w-full lg:w-1/2 mb-8 lg:mb-0 p-4 ">
                         <div className=''>
                             <h3 className='text-gray-800 mb-4 text-3xl font-semibold'>Get In Touch</h3>
                             <div className='mb-4'>

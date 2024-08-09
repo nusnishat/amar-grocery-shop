@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <div className="bg-custom-light">
             <div className='home-banner'>
-                <img className='w-2/3 mx-auto h-auto' src="/src/images/home-banner.webp"alt="Home Banner" />
+                <img className='w-2/3 mx-auto h-auto' src="https://i.ibb.co/stdLFs7/home-banner.webp"alt="Home Banner" />
             </div>
             <div className='py-20 px-12 md:px-20'>
                 <h3 className='text-center text-3xl font-semibold mb-8'>What we provide?</h3>

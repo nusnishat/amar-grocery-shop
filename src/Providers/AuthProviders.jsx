@@ -52,7 +52,10 @@ const AuthProviders = ({children}) => {
             body: JSON.stringify(newCartProduct)
         })
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>{
+            console.log(data);
+            Swal.fire("Product added to the cart")
+        })
     }
 
     // Function to handle the deletion of a product from the cart
@@ -126,13 +129,13 @@ const handlePlaceOrder = e =>{
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
-            Swal.fire({
-                title: "Successfull",
-                text: "Your order has been placed",
-                icon: "success"
-              });
-              window.location.href = '/';
         })
+        Swal.fire({
+            title: "Successfull",
+            text: "Your order has been placed",
+            icon: "success"
+          });
+        window.location.href = '/';
     })
    }
 

@@ -2,12 +2,13 @@ import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaUser } from "react-icons/fa";
 import { AuthContext } from '../../Providers/AuthProviders';
+import './Navbar.css'; 
 
 const Navbar = () => {
     const {user, logOut} = useContext(AuthContext);
-  
+    
     return (
-        <div className="navbar bg-base-100">
+        <div id='navLink' className="navbar bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
                 <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,7 +45,7 @@ const Navbar = () => {
                 </ul>
                 </div>
             </div>
-            <div className="navbar-start  text-2xl font-semibold hidden lg:flex ">
+            <div className="navbar-start text-2xl font-semibold hidden lg:flex ">
                 <ul className="menu menu-horizontal px-1">
                 <li className='px-4 bg-custom-gradient-red'>
                     <details>

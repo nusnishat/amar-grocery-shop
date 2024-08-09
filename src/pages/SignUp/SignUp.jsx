@@ -8,6 +8,8 @@ import Swal from 'sweetalert2';
 const SignUp = () => {
     const {createUser} = useContext(AuthContext);
     const [error, setError] = useState('');
+    const [errorPhone, setErrorPhone] = useState('');
+    const [errorPassword, setErrorPassword] = useState('');
     
     const navigate = useNavigate();
 
@@ -27,12 +29,12 @@ const SignUp = () => {
             console.log(phoneNumber, password);
         }
         else{
-            toast.error("Enter valid Phone Number");
+            setErrorPhone("Enter valid Phone Number");
         }
         if(password !== confirmPassword)
         {
  
-            toast.error("Password Not match");
+            setErrorPassword("Password Not match");
         }
         if(((phoneNumber.startsWith('880') && phoneNumber.length === 12) || (phoneNumber.startsWith('01') && phoneNumber.length === 11))&& (password === confirmPassword))
         {
@@ -76,7 +78,7 @@ const SignUp = () => {
             <div className='grid grid-cols-1 gap-4 md:grid-cols-2 px-12 md:px-20 py-20'>
                 {/* -----------banner start------------ */}
                 <div className='flex justify-center items-center'>
-                    <img className='w-2/3' src="/src/images/login.svg" alt="" />
+                    <img className='w-2/3' src="https://i.ibb.co/B3nSZ8P/login.jpg" alt="" />
                 </div>
                 {/* -----------banner end------------ */}
                 {/* ----------sign up layout------------ */}
@@ -97,7 +99,6 @@ const SignUp = () => {
                         <span className="mx-4 text-gray-500">Or with Email</span>
                         <div className="flex-grow border-t border-gray-300"></div>
                     </div>
-                    <ToastContainer />
                     {/* --------------form section start ---------------------*/}
                     <div className="flex items-center justify-center">
                         <div className="bg-white w-full max-w-md">
@@ -132,6 +133,9 @@ const SignUp = () => {
                                     className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                     />
                                 </div>
+                                {
+                                    errorPhone && <p className='text-red-600'>{errorPhone}</p>
+                                }
                                 <div>
                                     <label  className="block text-sm font-medium text-gray-700">Email</label>
                                     <input
@@ -162,6 +166,9 @@ const SignUp = () => {
                                     className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                     />
                                 </div>
+                                {
+                                    errorPassword && <p className='text-red-600'>{errorPassword}</p>
+                                }
                                 <h1 className='text-center'>Already have an account? <Link className='text-orange ms-2 underline font-semibold text-right' to='/login'>Sign In</Link></h1>
                                 <div>
                                     <button
