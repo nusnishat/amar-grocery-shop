@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import {
   FaUser,
   FaEnvelope,
@@ -9,7 +9,8 @@ import {
 import { AuthContext } from '../../../Providers/AuthProviders';
 
 const CheckoutForm = () => {
-    const {user} = useContext(AuthContext);
+ const {user, handlePlaceOrder, totalPayableAmount} = useContext(AuthContext);
+ 
   return (
     <div className="flex items-center justify-center">
       <div className="w-full max-w-2xl bg-white rounded-md text-custom-teal shadow-md p-12">
@@ -17,7 +18,7 @@ const CheckoutForm = () => {
         Please fill in the details below to complete your order. 
         </h2>
         {/* Billing Details */}
-        <form className="space-y-6">
+        <form  onSubmit={handlePlaceOrder} className="space-y-6">
           <div>
             <label className="block text-gray-700">Full Name</label>
             <div className="flex items-center border rounded-md p-2 mt-1">
@@ -26,6 +27,7 @@ const CheckoutForm = () => {
                 type="text"
                 className="w-full outline-none text-gray-700"
                 placeholder="Enter your name"
+                name="name"
                 required
               />
             </div>
@@ -39,6 +41,7 @@ const CheckoutForm = () => {
                 type="email"
                 className="w-full outline-none text-gray-700"
                 defaultValue={user?.email} 
+                name="email"
                 required
               />
             </div>
@@ -52,6 +55,7 @@ const CheckoutForm = () => {
                 type="tel"
                 className="w-full outline-none text-gray-700"
                 placeholder="017XXXXXXXX"
+                name="phoneNumber"
                 required
               />
             </div>
@@ -66,6 +70,7 @@ const CheckoutForm = () => {
                 type="text"
                 className="w-full outline-none text-gray-700"
                 placeholder="House No, Street Name"
+                name="address"
                 required
               />
             </div>
@@ -78,6 +83,7 @@ const CheckoutForm = () => {
               <FaCity className="text-gray-400 mr-2" />
               <select
                 className="w-full outline-none text-gray-700"
+                name="city"
                 required
               >
                 <option value="" disabled selected>Select your city</option>
@@ -91,8 +97,11 @@ const CheckoutForm = () => {
 
           {/* Payment Method */}
           <div className="mt-6">
-            <h3 className="text-lg font-bold text-gray-800 mb-4">Payment Method</h3>
-            <div className="flex items-center">
+            <div className="flex justify-between items-center">
+              <h3 className="text-lg font-bold text-gray-800">Payment Method</h3>
+              <p className="text-lg font-semibold text-gray-800">Total: {totalPayableAmount} Tk</p>
+            </div>
+            <div className="flex items-center mt-4">
               <input
                 type="radio"
                 name="paymentMethod"
@@ -103,13 +112,13 @@ const CheckoutForm = () => {
               />
               <label className="ml-2 text-gray-700">Cash on Delivery</label>
             </div>
-          </div>
+          </div>     
 
           {/* Submit Button */}
           <div>
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white font-bold py-3 rounded-md hover:bg-blue-600 transition duration-200"
+              className="w-full bg-custom-gradient-red text-white font-semibold py-3 rounded-md"
             >
               Place Order
             </button>

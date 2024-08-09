@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../Providers/AuthProviders';
 
 const CheckOutSummary = ({cartProducts}) => {
+    const {setTotalPayableAmount, totalPayableAmount} = useContext(AuthContext)
     const totalCartProducts = cartProducts.length;
     let totalPrice = 0;
     cartProducts.map(cartProduct =>{
         totalPrice = totalPrice+cartProduct.price ;
     })
     const amountPayable = totalPrice +100;
+    setTotalPayableAmount(amountPayable);
     return (
         <div>
             <div className='bg-white pt-8 pb-4 px-12 rounded-md'>
@@ -27,7 +30,7 @@ const CheckOutSummary = ({cartProducts}) => {
             <hr />
             <div className='flex justify-between mt-2'>
                 <p>Amount Payable :</p>
-                <p>{amountPayable} Tk</p>
+                <p>{totalPayableAmount} Tk</p>
             </div>
         </div>
         </div>

@@ -10,6 +10,7 @@ const AuthProviders = ({children}) => {
     const [user, setUser] = useState([]);
     const [loading, setLoading] = useState(true);
     const [cartProducts, setCartProducts] = useState([]);
+    const [totalPayableAmount, setTotalPayableAmount] = useState(0);
 
     //signup
     const createUser = (email, password) =>{
@@ -88,12 +89,36 @@ const AuthProviders = ({children}) => {
         alert('Failed to delete. Please try again later.'); // Show error message in case of failure
     });
 };
+const handlePlaceOrder = e =>{
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const phoneNumber = form.phoneNumber.value;
+    const city = form.city.value;
+    const address = form.address.value;
+    const order ={
+        customerName : name,
+        email,
+        phoneNumber,
+        city,
+        address,
+        cartProducts: cartProducts,
+        totalPayableAmount
+    }
+    fetch('http://localhost:5000/orders', {
+        method: 'POST',
+        headers:{
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify(order)
+    })
+    .then(res=>res.json())
+    .then(data=>console.log(data))
+   }
 
-    
-   
 
-
-    const info = {createUser, login, logOut, user, loading, handleAddToCart, cartProducts, setCartProducts, handleDelete}
+    const info = {createUser, login, logOut, user, loading, handleAddToCart, cartProducts, setCartProducts, handleDelete, handlePlaceOrder, totalPayableAmount, setTotalPayableAmount}
     return (
         <AuthContext.Provider value={info}>
             {children}
