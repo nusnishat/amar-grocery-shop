@@ -43,7 +43,7 @@ const SignUp = () => {
                 // new user has been created
                 const createdAt = result.user?.metadata?.creationTime;
                 const user = { name, email, phoneNumber, image, createdAt: createdAt };
-                fetch('http://localhost:5000/users', {
+                fetch('https://amar-grocery-shop-server.onrender.com/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

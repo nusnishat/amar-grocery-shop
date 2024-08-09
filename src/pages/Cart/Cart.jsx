@@ -6,7 +6,7 @@ import CartCalculation from './CartCalculation/CartCalculation';
 const Cart = () => {
     const {user, cartProducts, setCartProducts} = useContext(AuthContext)
     useEffect(()=>{
-        fetch(`http://localhost:5000/checkOut?email=${user?.email}`)
+        fetch(`https://amar-grocery-shop-server.onrender.com/checkOut?email=${user?.email}`)
         .then(res => res.json())
         .then(data=>setCartProducts(data))
     }, []);

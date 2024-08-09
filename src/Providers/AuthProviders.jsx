@@ -44,7 +44,7 @@ const AuthProviders = ({children}) => {
         const totalCartProducts = [...cartProducts, newCartProduct];
         setCartProducts(totalCartProducts);
         console.log(newCartProduct);
-        fetch('http://localhost:5000/cartProducts',{
+        fetch('https://amar-grocery-shop-server.onrender.com/cartProducts',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -58,7 +58,7 @@ const AuthProviders = ({children}) => {
     // Function to handle the deletion of a product from the cart
     const handleDelete = (id) => {
         // Send DELETE request to remove the product from the server by its ID
-        fetch(`http://localhost:5000/cartProducts/${id}`, {
+        fetch(`https://amar-grocery-shop-server.onrender.com/cartProducts/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -107,7 +107,7 @@ const handlePlaceOrder = e =>{
         cartProducts: cartProducts,
         totalPayableAmount
     }
-    fetch('http://localhost:5000/orders', {
+    fetch('https://amar-grocery-shop-server.onrender.com/orders', {
         method: 'POST',
         headers:{
             'content-type' : 'application/json'
@@ -117,7 +117,7 @@ const handlePlaceOrder = e =>{
     .then(res=>res.json())
     .then(data=>console.log(data))
     cartProducts.map(cartProduct=>{
-        fetch(`http://localhost:5000/cartProducts/${cartProduct._id}`, {
+        fetch(`https://amar-grocery-shop-server.onrender.com/cartProducts/${cartProduct._id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -148,7 +148,7 @@ const handlePlaceOrder = e =>{
         message,
     }
     console.log(contactMessage)
-    fetch('http://localhost:5000/contactUs', {
+    fetch('https://amar-grocery-shop-server.onrender.com/contactUs', {
         method: 'POST',
         headers:{
             'content-type' : 'application/json'
