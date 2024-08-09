@@ -3,6 +3,7 @@ import Swal from 'sweetalert2'
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import app from '../Firebase/firebase.config';
 
+
 export const AuthContext = createContext(null);
 const auth = getAuth(app)
 
@@ -115,6 +116,24 @@ const handlePlaceOrder = e =>{
     })
     .then(res=>res.json())
     .then(data=>console.log(data))
+    cartProducts.map(cartProduct=>{
+        fetch(`http://localhost:5000/cartProducts/${cartProduct._id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            Swal.fire({
+                title: "Successfull",
+                text: "Your order has been placed",
+                icon: "success"
+              });
+              window.location.href = '/';
+        })
+    })
    }
 
 
