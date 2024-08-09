@@ -1,13 +1,13 @@
-import React, { useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 import CartProduct from './CartProduct/CartProduct';
 
 const Cart = () => {
-    const {user, orders, setOrders} = useContext(AuthContext)
+    const {user, cartProducts, setCartProducts} = useContext(AuthContext)
     useEffect(()=>{
         fetch(`http://localhost:5000/checkOut?email=${user?.email}`)
         .then(res => res.json())
-        .then(data=>setOrders(data))
+        .then(data=>setCartProducts(data))
     }, []);
     
 
@@ -19,7 +19,7 @@ const Cart = () => {
             <div className='md:grid grid-cols-3 py-20 px-12 md:px-20'>
                 <div className='col-span-2'>
                     {
-                        orders.map(order=><CartProduct key={order._id} order={order}></CartProduct>)
+                        cartProducts.map(cartProduct=><CartProduct key={cartProduct._id} cartProduct={cartProduct}></CartProduct>)
                     }
                 </div>
                 <div>

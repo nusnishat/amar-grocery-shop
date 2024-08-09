@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../Providers/AuthProviders';
 
-const CartProduct = ({order}) => {
-    const { _id, title, price, quantity, imagePath } = order;
+const CartProduct = ({cartProduct}) => {
+    const { _id, title, price, quantity, imagePath } = cartProduct;
     const {handleDelete} = useContext(AuthContext);
     return (
         <div className='grid grid-cols-3 bg-white py-6 my-4 px-4'>
