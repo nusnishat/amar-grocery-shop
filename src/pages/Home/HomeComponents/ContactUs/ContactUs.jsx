@@ -2,8 +2,12 @@ import { FaHome, FaPhone, FaLink, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstag
 import { HiMail } from 'react-icons/hi';
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import { useContext } from 'react';
+import { AuthContext } from '../../../../Providers/AuthProviders';
 
 const ContactUs = () => {
+    const {handleContactUs} = useContext(AuthContext);
+
     return (
         <div className="bg-custom-light">
             <div className='py-16 bg-custom-gradient text-center text-4xl text-white font-semibold'>
@@ -43,18 +47,18 @@ const ContactUs = () => {
                     <div className="w-full lg:w-1/2">
                         <div className='bg-white shadow-lg rounded-lg p-8'>
                             <h3 className='text-gray-800 mb-6 text-3xl font-semibold'>Send Us a Message</h3>
-                            <form>
+                            <form onSubmit={handleContactUs}>
                                 <div className="mb-4">
                                     <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Your Name</label>
-                                    <input type="text" placeholder='Enter Your Name' className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" id="name" />
+                                    <input type="text" name="name" placeholder='Enter Your Name' className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" id="name" />
                                 </div>
                                 <div className="mb-4">
                                     <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Your Email</label>
-                                    <input type="email" placeholder='Enter Your Email' className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" id="email" />
+                                    <input type="email" name="email" placeholder='Enter Your Email' className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" id="email" />
                                 </div>
                                 <div className="mb-4">
                                     <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Your Message</label>
-                                    <textarea className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" id="message" rows="4" placeholder="Enter your message here"></textarea>
+                                    <textarea name="message" className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" id="message" rows="4" placeholder="Enter your message here name"></textarea>
                                 </div>
                                 <button type="submit" className="w-full py-2 px-4 bg-custom-gradient-red text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
                                     Submit

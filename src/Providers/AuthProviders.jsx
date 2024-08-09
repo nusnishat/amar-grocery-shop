@@ -136,8 +136,35 @@ const handlePlaceOrder = e =>{
     })
    }
 
+   const handleContactUs = e =>{
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const message = form.message.value;
+    const contactMessage ={
+        customerName : name,
+        email,
+        message,
+    }
+    console.log(contactMessage)
+    fetch('http://localhost:5000/contactUs', {
+        method: 'POST',
+        headers:{
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify(contactMessage)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        Swal.fire('Your message has been sent successfully!!');
+        form.reset();
+    })
+   }
 
-    const info = {createUser, login, logOut, user, loading, handleAddToCart, cartProducts, setCartProducts, handleDelete, handlePlaceOrder, totalPayableAmount, setTotalPayableAmount}
+
+    const info = {createUser, login, logOut, user, loading, handleAddToCart, cartProducts, setCartProducts, handleDelete, handlePlaceOrder, totalPayableAmount, setTotalPayableAmount, handleContactUs}
     return (
         <AuthContext.Provider value={info}>
             {children}
