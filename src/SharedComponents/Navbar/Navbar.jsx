@@ -4,7 +4,7 @@ import { FaUser } from "react-icons/fa";
 import { AuthContext } from '../../Providers/AuthProviders';
 
 const Navbar = () => {
-    const {user} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
   
     return (
         <div className="navbar bg-base-100">
@@ -68,7 +68,7 @@ const Navbar = () => {
                 <FaUser className='me-2' />
                 {
                     user?
-                     <button>Sign Out</button>
+                     <button onClick={()=>logOut()}>Sign Out</button>
                     :
                     <Link to='/signUp'>Sign Up</Link>
                 }

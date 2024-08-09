@@ -16,8 +16,10 @@ const Cart = () => {
             <div className='py-16 bg-custom-gradient text-center text-4xl text-white font-semibold'>
                 <h1>Cart</h1>
             </div>
+           {
+            cartProducts.length != 0?
             <div className='md:grid grid-cols-3 gap-8 py-20 px-12 md:px-20'>
-                <div className='col-span-2'>
+            <div className='col-span-2'>
                     {
                         cartProducts.map(cartProduct=><CartProduct key={cartProduct._id} cartProduct={cartProduct}></CartProduct>)
                     }
@@ -26,6 +28,9 @@ const Cart = () => {
                     <CartCalculation cartProducts={cartProducts}></CartCalculation>
                 </div>
             </div>
+            :
+            <div className='py-24 text-3xl font-semibold flex justify-center'>Your cart is empty !</div>
+           }
         </div>
     );
 };

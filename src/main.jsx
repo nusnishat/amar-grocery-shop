@@ -15,6 +15,7 @@ import Login from './pages/Login/Login.jsx';
 import Products from './pages/Products/Products.jsx';
 import Cart from './pages/Cart/Cart.jsx';
 import CheckOut from './pages/CheckOut/CheckOut.jsx';
+import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/products/:department",
-        element:<Products></Products>
+        element:<PrivateRoute><Products></Products></PrivateRoute>
       },
       {
         path:"/cart",
