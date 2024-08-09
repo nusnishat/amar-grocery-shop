@@ -13,6 +13,7 @@ import AuthProviders from './Providers/AuthProviders.jsx';
 import SignUp from './pages/SignUp/SignUp.jsx';
 import Login from './pages/Login/Login.jsx';
 import Products from './pages/Products/Products.jsx';
+import Cart from './pages/Cart/Cart.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path:"/products/:department",
         element:<Products></Products>
+      },
+      {
+        path:"/cart",
+        element:<Cart></Cart>
       },
     ]
   },

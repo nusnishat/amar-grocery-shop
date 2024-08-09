@@ -12,7 +12,6 @@ const Products = () => {
         .then(data=>setProducts(data))
     }, []);
 
-    console.log(products)
     return (
         <div className='pb-20 px-12 md:px-20 bg-custom-light'>
            <div className="text-center">

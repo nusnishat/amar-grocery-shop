@@ -1,7 +1,11 @@
 import { FaBasketShopping } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
+import { AuthContext } from "../../Providers/AuthProviders";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+    const {orders} = useContext(AuthContext);
     return (
         <div className='md:flex bg-custom-gradient py-4 px-8 space-y-4'>
             <div className="text-2xl text-white font-semibold flex items-center justify-center my-auto mx-auto">
@@ -18,7 +22,7 @@ const Header = () => {
             </div>
             <div className="flex items-center justify-center my-auto mx-auto p-2 px-6 bg-white font-semibold rounded-full">
                 <FaShoppingCart className="me-2 text-xl mt-1 inline" ></FaShoppingCart>
-                <p className="inline">My Cart (0)</p>
+                <Link to="/cart" className="inline">My Cart ({orders.length})</Link>
 
             </div>
         </div>

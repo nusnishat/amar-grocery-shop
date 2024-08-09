@@ -5,13 +5,14 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDc05X03IySK94qICIte0ZPjdpDSb2ws0s",
-  authDomain: "amar-grocery-shop.firebaseapp.com",
-  projectId: "amar-grocery-shop",
-  storageBucket: "amar-grocery-shop.appspot.com",
-  messagingSenderId: "590861992051",
-  appId: "1:590861992051:web:f87fb1ff28053e63f9ea06"
+  apiKey: "AIzaSyC3hYZGFUXRjwrzsVZEdp3zpIGhMJhh1Mo",
+  authDomain: "grocery-shop-8c816.firebaseapp.com",
+  projectId: "grocery-shop-8c816",
+  storageBucket: "grocery-shop-8c816.appspot.com",
+  messagingSenderId: "849752344209",
+  appId: "1:849752344209:web:2c54f5043324a58551e130"
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

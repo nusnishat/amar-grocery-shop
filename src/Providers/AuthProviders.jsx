@@ -8,14 +8,8 @@ const auth = getAuth(app)
 const AuthProviders = ({children}) => {
     const [user, setUser] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [orders, setOrders] = useState([]);
 
-    const createUser = (email, password) =>{
-        return createUserWithEmailAndPassword(auth, email, password)
-    }
-    const login = (email, password) =>{
-        return signInWithEmailAndPassword(auth, email, password)
-    }
-    
     //logOut
     const logOut = () =>{
         return signOut(auth);
@@ -32,7 +26,51 @@ const AuthProviders = ({children}) => {
         } 
     }, [])
 
-    const info = {createUser, login, logOut, user, loading}
+    const handleAddToCart = product =>{
+        const newOrder = {...product, email: user.email};
+        console.log(newOrder);
+        fetch('http://localhost:5000/orders',{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newOrder)
+        })
+        .then(res=>res.json())
+        .then(data=>console.log(data))
+    }
+    const handleDelete = id =>{
+        const proceed = confirm('Are you sure?')
+        if(proceed)
+        {
+            fetch(`http://localhost:5000/orders/${id}`, {
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data=>{
+                console.log('deleted')
+                if(data.deleteCount>0)
+                {
+                    alert('deleted successfully');
+                    const remainig = orders.filter(order => order._id !==id);
+                    setOrders(remainig);
+                }
+            })
+        }
+        
+    }
+
+    const createUser = (email, password) =>{
+        return createUserWithEmailAndPassword(auth, email, password)
+    }
+    const login = (email, password) =>{
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+    
+   
+
+
+    const info = {createUser, login, logOut, user, loading, handleAddToCart, orders, setOrders, handleDelete}
     return (
         <AuthContext.Provider value={info}>
             {children}

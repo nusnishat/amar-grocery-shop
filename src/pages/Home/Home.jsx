@@ -2,8 +2,16 @@ import Banner from './HomeComponents/Banner/Banner';
 import HowToOrder from './HomeComponents/HowToOrder/HowToOrder';
 import AboutUs from './HomeComponents/AboutUs/AboutUs';
 import ContactUs from './HomeComponents/ContactUs/ContactUs';
+import { useContext, useEffect } from 'react';
+import { AuthContext } from '../../Providers/AuthProviders';
 
 const Home = () => {
+    const {user, orders, setOrders} = useContext(AuthContext)
+    useEffect(()=>{
+        fetch(`http://localhost:5000/checkOut?email=${user?.email}`)
+        .then(res => res.json())
+        .then(data=>setOrders(data))
+    }, []);
     return (
         <div>
             <Banner></Banner>

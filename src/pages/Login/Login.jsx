@@ -21,7 +21,7 @@ const Login = () => {
             const loggedUser = result.user;
             form.reset();
             console.log(loggedUser);
-            Swal.fire("SweetAlert2 is working!");
+            Swal.fire("Login Successfull!!");
         // navigate('/home/dashboard');
         })
         .catch(error =>{
