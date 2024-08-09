@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 import CheckOutSummary from './CheckOutSummary/CheckOutSummary';
 import CheckOutCard from './CheckOutSummary/CheckOutCard/CheckOutCard';
+import CheckoutForm from './CheckOutForm/CheckOutForm';
 
 const CheckOut = () => {
     const {cartProducts} = useContext(AuthContext);
@@ -19,7 +20,7 @@ const CheckOut = () => {
                     }
                 </div>
                 <div className='col-span-2'>
-
+                    <CheckoutForm></CheckoutForm>
                 </div>
             </div>
         </div>
