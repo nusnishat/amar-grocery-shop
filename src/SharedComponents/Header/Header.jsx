@@ -1,7 +1,7 @@
 import { FaBasketShopping } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProviders";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect} from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {

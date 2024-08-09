@@ -1,16 +1,17 @@
-import { useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Product from './Product/Product';
 
 const Products = () => {
     const params = useParams();
     const [products, setProducts] = useState([]);
- 
+
     useEffect(()=>{
         fetch(`http://localhost:5000/products/${params.department}`)
         .then(res =>res.json())
         .then(data=>setProducts(data))
     }, []);
+
 
     return (
         <div className='pb-20 px-12 md:px-20 bg-custom-light'>

@@ -6,7 +6,13 @@ import { useContext, useEffect } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 
 const Home = () => {
- 
+    const {user, setCartProducts} = useContext(AuthContext)
+    useEffect(()=>{
+        fetch(`http://localhost:5000/checkOut?email=${user?.email}`)
+        .then(res => res.json())
+        .then(data=>setCartProducts(data))
+    }, []);
+    
     return (
         <div>
             <Banner></Banner>

@@ -5,7 +5,7 @@ const CartProduct = ({cartProduct}) => {
     const { _id, title, price, quantity, imagePath } = cartProduct;
     const {handleDelete} = useContext(AuthContext);
     return (
-        <div className='grid grid-cols-3 bg-white py-6 my-4 px-4'>
+        <div className='grid grid-cols-3 bg-white py-6 mb-4 px-4'>
             <div className=''><img className='w-2/3' src={imagePath} alt="" /></div>
             <div className='col-span-2  '>
                 <p className='text-xl font-semibold text-custom-teal'>{title}</p>

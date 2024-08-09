@@ -1,11 +1,17 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaBagShopping } from "react-icons/fa6";
 import { AuthContext } from "../../../Providers/AuthProviders";
 
 const Product = ({product}) => {
     const { _id, title, price, quantity, imagePath } = product;
-    const {handleAddToCart} = useContext(AuthContext);
+    const {user, handleAddToCart, setCartProducts} = useContext(AuthContext)
+    useEffect(()=>{
+        fetch(`http://localhost:5000/checkOut?email=${user?.email}`)
+        .then(res => res.json())
+        .then(data=>setCartProducts(data))
+    }, []);
+    
     return (
         <div className='text-center bg-white rounded-md shadow-md pb-8 px-6'>
             <img className="w-2/3 mx-auto" src={imagePath} alt={title} />
