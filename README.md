@@ -29,6 +29,8 @@
   - **Express.js:** For building RESTful APIs.
   - **MongoDB:** For storing user data, cart products, and checkout information.
 
+    For detailed information about the backend implementation, please refer to the [Backend Repository](https://github.com/nusnishat/amar-grocery-shop-server).
+
 - **Authentication:**
   - **Firebase:** For user authentication and management.
 
