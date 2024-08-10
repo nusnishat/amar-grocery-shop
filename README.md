@@ -5,8 +5,8 @@
 ## Key Features
 
 - **User Authentication:** Secure sign-up and login functionality with Firebase Authentication.
-- **Product Management:** Display and manage a variety of grocery products based on the categories, which are  retrieved from the database using an API.
-- **Cart Functionality:** Users can add products to their cart, view cart details, and proceed to checkout.
+- **Product Management:** Display and manage a variety of grocery products based on the categories, which are  retrieved from the database using an API. View product details, including price, description, and availability.
+- **Cart Functionality:** Users can add products to their cart,View and update cart details, remove items from the cart and proceed to checkout.
 - **Checkout Process:** Users can complete their orders with a responsive checkout form, including city selection and payment method (cash on delivery).
 - **Private Routes:** Restricted access for certain routes to ensure users are authenticated where necessary.
 - **User Data Management:** User information, product details, cart products, and checkout form details are stored in MongoDB.
