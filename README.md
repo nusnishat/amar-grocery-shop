@@ -41,8 +41,3 @@
 
 ## Live Website
 You can view the live version of the Amar-Grocery e-commerce website at: [https://grocery-shop-8c816.web.app/](https://grocery-shop-8c816.web.app/)
-
-
-
-
-https://grocery-shop-8c816.web.app/
