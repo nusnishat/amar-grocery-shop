@@ -7,7 +7,7 @@ const Banner = () => {
                 <img className='w-full md:w-2/3 mx-auto h-auto' src="https://i.ibb.co/stdLFs7/home-banner.webp"alt="Home Banner" />
             </div>
             <div className='pb-20 pt-12 md:pt-16 px-8 md:px-20'>
-                <h3 className='text-center text-3xl font-semibold mb-8'>What we provide?</h3>
+                <h3 className='text-center text-3xl font-semibold mb-8'>What We Provide?</h3>
                     <div className="grid gird-cols-1 md:grid-cols-3 gap-4 mx-auto">
                         <div className="px- bg-white">
                             <div className="card shadow-lg rounded p-4">

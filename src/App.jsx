@@ -7,12 +7,12 @@ import Navbar from './SharedComponents/Navbar/Navbar'
 function App() {
  
   return (
-    <>
+    <div>
       <Header></Header>
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>
-    </>
+    </div>
   )
 }
 

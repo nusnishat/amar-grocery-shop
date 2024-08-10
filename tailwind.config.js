@@ -17,6 +17,9 @@ export default {
         'custom-light': '#f5faff',
       
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
     },
   },
   plugins: [

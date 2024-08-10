@@ -26,7 +26,7 @@ const Login = () => {
         // navigate('/home/dashboard');
         })
         .catch(error =>{
-            setError(error.message);
+            setError("Invalid credentials. Please ensure that your email and password are entered correctly.");
         })
        
     }
@@ -89,7 +89,7 @@ const Login = () => {
                                 <h1 className='text-center'>Don't have an account? <Link className='text-orange ms-2 underline font-semibold text-right' to='/signUp'>Sign Up</Link></h1>
                                 <div>
                                     {
-                                        error && <p className='my-2 text-red-600'>{error}</p>
+                                        error && <p className='mb-2 text-red-600'>{error}</p>
                                     }
                                     <button
                                     type="submit"

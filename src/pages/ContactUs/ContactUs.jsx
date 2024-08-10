@@ -3,25 +3,26 @@ import { HiMail } from 'react-icons/hi';
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useContext } from 'react';
-import { AuthContext } from '../../../../Providers/AuthProviders';
+import { AuthContext } from '../../Providers/AuthProviders';
+
 
 const ContactUs = () => {
-    const {handleContactUs} = useContext(AuthContext);
+    const { handleContactUs } = useContext(AuthContext);
 
     return (
         <div className="bg-custom-light">
             <div className='py-16 bg-custom-gradient text-center text-4xl text-white font-semibold'>
                 <h1>Contact Us</h1>
             </div>
-            <div className=' px-8 md:px-20 py-20'>
+            <div className='px-8 md:px-20 py-20'>
                 <div className='flex flex-wrap'>
                     {/* Contact Information Section */}
-                    <div className="w-full lg:w-1/2 mb-8 lg:mb-0 p-4 ">
-                        <div className=''>
+                    <div className="w-full lg:w-1/2 mb-8 lg:mb-0 p-4">
+                        <div>
                             <h3 className='text-gray-800 mb-4 text-3xl font-semibold'>Get In Touch</h3>
                             <div className='mb-4'>
                                 <h5 className='text-gray-600 flex items-center mb-2'><FaHome className="mr-2 text-blue-500" /> Address:</h5>
-                                <p className='text-gray-700'>Street 10, K block, Halishahar <br /> Chittagong Town, Bangladesh</p>
+                                <p className='text-gray-700'>K block, Halishahar <br /> Chittagong Town, Bangladesh</p>
                             </div>
                             <div className='mb-4'>
                                 <h5 className='text-gray-600 flex items-center mb-2'><FaPhone className="mr-2 text-green-500" /> Mobile:</h5>
@@ -58,7 +59,7 @@ const ContactUs = () => {
                                 </div>
                                 <div className="mb-4">
                                     <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Your Message</label>
-                                    <textarea name="message" className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" id="message" rows="4" placeholder="Enter your message here name"></textarea>
+                                    <textarea name="message" className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" id="message" rows="4" placeholder="Enter your message here"></textarea>
                                 </div>
                                 <button type="submit" className="w-full py-2 px-4 bg-custom-gradient-red text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
                                     Submit
@@ -71,12 +72,12 @@ const ContactUs = () => {
                 <div className='py-20'>
                     <h3 className='text-gray-800 my-8 text-3xl font-semibold text-center'>Find Us Here</h3>
                     <div className='w-full h-64'>
-                        <MapContainer center={[23.8103, 90.4125]} zoom={13} className='h-full'>
+                        <MapContainer center={[22.3318, 91.8092]} zoom={13} className='h-full'>
                             <TileLayer
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             />
-                            <Marker position={[23.8103, 90.4125]} />
+                            <Marker position={[22.3318, 91.8092]} />
                         </MapContainer>
                     </div>
                 </div>

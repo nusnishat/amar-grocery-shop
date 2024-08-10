@@ -1,9 +1,10 @@
-import Banner from './HomeComponents/Banner/Banner';
-import HowToOrder from './HomeComponents/HowToOrder/HowToOrder';
-import AboutUs from './HomeComponents/AboutUs/AboutUs';
-import ContactUs from './HomeComponents/ContactUs/ContactUs';
+
 import { useContext, useEffect } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
+import Banner from '../Banner/Banner';
+import HowToOrder from '../HowToOrder/HowToOrder';
+import AboutUs from '../AboutUs/AboutUs';
+import ContactUs from '../ContactUs/ContactUs';
 
 const Home = () => {
     const {user, setCartProducts} = useContext(AuthContext)

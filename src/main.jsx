@@ -7,8 +7,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './pages/Home/Home.jsx';
-import AboutUs from './pages/Home/HomeComponents/AboutUs/AboutUs.jsx';
-import ContactUs from './pages/Home/HomeComponents/ContactUs/ContactUs.jsx';
+import AboutUs from './pages/AboutUs/AboutUs.jsx';
+import ContactUs from './pages/ContactUs/ContactUs.jsx';
 import AuthProviders from './Providers/AuthProviders.jsx';
 import SignUp from './pages/SignUp/SignUp.jsx';
 import Login from './pages/Login/Login.jsx';

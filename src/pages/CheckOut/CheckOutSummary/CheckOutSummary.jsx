@@ -12,7 +12,7 @@ const CheckOutSummary = ({cartProducts}) => {
     setTotalPayableAmount(amountPayable);
     return (
         <div>
-            <div className='bg-white pt-8 pb-4 px-12 rounded-md'>
+            <div className='bg-white pt-8 pb-4 px-6 md:px-12 rounded-md'>
             <h1 className='mb-2 text-custom-teal font-semibold text-2xl'>Cart Summary</h1>
             <hr />
             <div className='flex justify-between mt-2'>

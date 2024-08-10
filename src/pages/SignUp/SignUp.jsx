@@ -17,7 +17,6 @@ const SignUp = () => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
-        const image = form.image.value;
         const phoneNumber = form.phone.value;
         const email = form.email.value;
         const password = form.password.value;
@@ -44,7 +43,7 @@ const SignUp = () => {
                 console.log(result.user);
                 // new user has been created
                 const createdAt = result.user?.metadata?.creationTime;
-                const user = { name, email, phoneNumber, image, createdAt: createdAt };
+                const user = { name, email, phoneNumber, createdAt: createdAt };
                 fetch('https://amar-grocery-shop-server.onrender.com/users', {
                     method: 'POST',
                     headers: {
@@ -110,16 +109,6 @@ const SignUp = () => {
                                     type="text"
                                     name="name"
                                     placeholder='Enter your name'
-                                    className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                    />
-                                </div>
-                                <div>
-                                    <label  className="block text-sm font-medium text-gray-700">Image Url</label>
-                                    <input
-                                    required
-                                    type="text"
-                                    name="image"
-                                    placeholder='Enter your photo url'
                                     className="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                     />
                                 </div>

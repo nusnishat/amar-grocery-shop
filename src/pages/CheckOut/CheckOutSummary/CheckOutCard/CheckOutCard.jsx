@@ -10,7 +10,7 @@ const CheckOutCard = ({cartProduct}) => {
             </div>
             <div className="ms-4 text-sm">
                 <p className="font-semibold">{title}</p>
-                <p>Price : {price}</p>
+                <p>Price : {price} Tk</p>
                 <p>Quantity : {quantity}</p>
             </div>
         </div>
